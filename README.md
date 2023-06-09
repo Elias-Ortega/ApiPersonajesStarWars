@@ -1,2 +1,3 @@
 # ApiPersonajesStarWars
-#### Estructura base del proyecto para mostrar datos de algunos personajes de StarWars.
+#### Proyecto que muestra el nombre, altura y peso de algunos personajes de StarWars, desde la API:
+#### https://swapi.dev/

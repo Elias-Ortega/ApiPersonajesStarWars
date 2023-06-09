@@ -51,3 +51,65 @@ class Personaje {
     yield getPersonaje(15);
     yield getPersonaje(16);
   }
+
+  //  botón timeline 1-5
+const btnPrimeros = document.getElementById('primeros');
+
+btnPrimeros.addEventListener('click', () => {
+  const divsRangoUnoAlCinco = document.querySelectorAll('.timeline-text');
+  const generador = generador1();
+
+  divsRangoUnoAlCinco.forEach(async (elemento) => {
+    const h6 = elemento.querySelector('.nombre-personaje');
+    const parrafo = elemento.querySelector('.altura-peso');
+
+    const personaje = await generador.next().value;
+
+    if (personaje) {
+      h6.textContent = personaje.nombre;
+      parrafo.textContent = `${personaje.altura} cms, ${personaje.peso} kilos`;
+    }
+  });
+});
+
+
+//Boton  timeline 6-11 
+const btnSecundarios = document.getElementById('secundarios');
+
+btnSecundarios.addEventListener('click', () => {
+  const divsRangoSeisAlOnce = document.querySelectorAll('.timeline-text.secundarios');
+  const generador = generador2();
+
+  divsRangoSeisAlOnce.forEach(async (elemento) => {
+    const h6 = elemento.querySelector('.nombre-personaje');
+    const parrafo = elemento.querySelector('.altura-peso');
+
+    const personaje = await generador.next().value;
+
+    if (personaje) {
+      h6.textContent = personaje.nombre;
+      parrafo.textContent = `${personaje.altura} cms, ${personaje.peso} kilos`;
+    }
+  });
+});
+
+
+// Boton timeline 12-17 
+const btnOtros = document.getElementById('otrosPersonajes');
+
+btnOtros.addEventListener('click', () => {
+  const divsRangoDoceAlDiecisiete = document.querySelectorAll('.timeline-text.otros');
+  const generador = generador3();
+
+  divsRangoDoceAlDiecisiete.forEach(async (elemento) => {
+    const h6 = elemento.querySelector('.nombre-personaje');
+    const parrafo = elemento.querySelector('.altura-peso');
+
+    const personaje = await generador.next().value;
+
+    if (personaje) {
+      h6.textContent = personaje.nombre;
+      parrafo.textContent = `${personaje.altura} cms, ${personaje.peso} kilos`;
+    }
+  });
+});
